@@ -36,7 +36,7 @@ export default function Banner() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="relative h-[calc(100vh-4rem)] w-full">
+          <div className="relative h-[calc(100vh-4rem)] w-full z-40  top-0">
             <img src={slider2} alt="" />
             <div className="absolute  flex justify-center flex-col items-start  left-0 right-0 bottom-0 top-0 bg-opacity-50">
               <div className="ml-[10%]">
@@ -46,7 +46,7 @@ export default function Banner() {
                 <h1 className="text-6xl text-white font-nunito font-bold">
                   New Arrival Electric <br /> Remote Car
                 </h1>
-                <p className="capitalize mt-6 mb-4 text-gray-200">
+                <p className="capitalize mt-6 mb-4 text-gray-200 font-nunito">
                   Get Up to 30% of your on your first order
                 </p>
                 <AwesomeButton type="primary">Shop Now</AwesomeButton>
