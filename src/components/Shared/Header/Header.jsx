@@ -49,7 +49,7 @@ const Header = () => {
           </ul>
         </div>
         <Link>
-          <img src={logo} alt="" />
+          <img src={logo} alt="toy town" className="w-4/5" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

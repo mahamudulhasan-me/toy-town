@@ -9,7 +9,7 @@ module.exports = {
       },
       colors: {
         pri: "#09ccd0",
-        sec: "#ff6f69",
+        sec: "#EA1662",
       },
     },
   },
