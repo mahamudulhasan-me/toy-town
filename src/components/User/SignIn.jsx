@@ -9,7 +9,7 @@ const SignIn = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="min-h-[calc(100vh-4rem)] grid grid-cols-2 px-[10%]  bg-gray-100">
+    <div className="min-h-[calc(100vh-4rem)] grid grid-cols-2 justify-center items-center px-[10%]  bg-gray-100">
       <div>
         <img src={login} alt="" />
       </div>

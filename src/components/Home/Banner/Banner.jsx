@@ -56,9 +56,9 @@ export default function Banner() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="relative h-[calc(100vh-4rem)] w-full">
+          <div className="relative h-[calc(100vh-4rem)] w-full z-40">
             <img src={slider3} alt="" />
-            <div className="absolute  flex justify-center flex-col items-end bg-slate-950  left-0 right-0 bottom-0 top-0 bg-opacity-50">
+            <div className="absolute z-10  flex justify-center flex-col items-end bg-slate-950  left-0 right-0 bottom-0 top-0 bg-opacity-50">
               <div className="mr-20">
                 <h3 className="text-sec text-3xl font-normal mb-5  font-poppins">
                   Hot & Trendy

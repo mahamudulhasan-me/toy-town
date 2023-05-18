@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import Headroom from "react-headroom";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import logo from "../../../assets/images/Logo.png";
+import { AuthContext } from "../../../provider/AuthProvider";
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  // handle logout
+  const handleLogOut = () => {
+    logOut()
+      .then(() => toast.warning("You are logged out!"))
+      .catch((err) => toast.error(err.message));
+  };
   const navOption = (
     <>
       <li>
@@ -59,9 +68,26 @@ const Header = () => {
           <ul className=" menu-horizontal px-1 nav relative">{navOption}</ul>
         </div>
         <div className="navbar-end">
-          <AwesomeButton type="secondary">
-            <Link to={"/signin"}>Sign In</Link>
-          </AwesomeButton>
+          {user ? (
+            <div className="flex justify-center items-center gap-2 ">
+              <div className=" w-12 h-12 rounded-full ring-2 hover:ring-4 duration-1000 ring-sec">
+                <div
+                  className="tooltip z-50 hover:tooltip-open tooltip-left"
+                  data-tip={user?.displayName && user?.displayName}
+                >
+                  <img src={user?.photoURL} alt="" className="rounded-full" />
+                </div>
+              </div>
+
+              <Link onClick={handleLogOut}>
+                <AwesomeButton type="secondary">Log Out</AwesomeButton>
+              </Link>
+            </div>
+          ) : (
+            <AwesomeButton type="secondary">
+              <Link to={"/signin"}>Sign In</Link>
+            </AwesomeButton>
+          )}
         </div>
       </div>
     </Headroom>
