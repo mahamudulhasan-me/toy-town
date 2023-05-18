@@ -1,17 +1,71 @@
-import React, { useState } from "react";
+import { updateProfile } from "@firebase/auth";
+import React, { useContext, useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../provider/AuthProvider";
 import SocialSignin from "./SocialSignin";
 
 const Register = ({ signIn, setSignIn }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passError, setPassError] = useState("");
+  const [acceptTerms, setAcceptTerms] = useState(true);
+
+  const { registerNewUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const getPassword = (e) => {
+    setPassError("");
+    const password = e.target.value;
+    if (!/(?=.*?[A-Z])/.test(password)) {
+      setPassError("At least one upper case");
+    } else if (!/(?=.*?[a-z])/.test(password)) {
+      setPassError("At least one lower case");
+    } else if (!/(?=.*?[0-9])/.test(password)) {
+      setPassError("At least one digit");
+    } else if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
+      setPassError("At least one special character");
+    } else if (password.length < 6) {
+      setPassError("Minimum password length is 6 characters");
+    }
+    setPassword(password);
+  };
+
+  const handleRegisterNewUser = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    console.log({ name, photo, email, password });
+    if (!passError) {
+      const form = e.target;
+      const name = form.name.value;
+      const photo = form.photo.value;
+      registerNewUser(email, password)
+        .then((userCredential) => {
+          const loggedUser = userCredential.user;
+          updateProfile(loggedUser, {
+            displayName: name,
+            photoURL: photo,
+          })
+            .then(toast.success("Registration Successful"))
+            .catch((err) => toast(err.message));
+          navigate("/");
+        })
+        .catch((error) => setPassError(error.message));
+    }
+  };
   return (
     <div className="text-center  mb-10 mt-20 bg-white rounded-3xl">
       <h2 className="mt-8 mb-10 text-3xl text-pri">
         Sign <span className="text-sec">Up</span>
       </h2>
-      <form className="space-y-5 ">
+      <form onSubmit={handleRegisterNewUser} className="space-y-5 ">
         <div className="grid grid-cols-2 gap-5 px-5">
           <input
             type="text"
@@ -28,12 +82,14 @@ const Register = ({ signIn, setSignIn }) => {
           <input
             type="text"
             placeholder="Email"
+            name="email"
             className="bg-[#F8F8F8] py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
           />
           <div className="relative">
             <input
               type={`${showPassword ? "text" : "password"}`}
               name="password"
+              onChange={getPassword}
               placeholder="Enter Password"
               className=" bg-[#F8F8F8]  py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
             />
@@ -60,6 +116,7 @@ const Register = ({ signIn, setSignIn }) => {
             </Link>
           </p>
         </div>
+        <p className="font-semibold text-rose-600">{passError}</p>
         <AwesomeButton type="primary">
           <div className="w-24  ">Sign Up</div>
         </AwesomeButton>
