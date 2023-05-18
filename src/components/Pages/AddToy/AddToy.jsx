@@ -59,10 +59,13 @@ const AddToy = () => {
               <div className="text-sm breadcrumbs">
                 <ul>
                   <li>
-                    <a>Home</a>
+                    <a>Admin</a>
                   </li>
                   <li>
-                    <a>Add Toy</a>
+                    <a>Form</a>
+                  </li>
+                  <li>
+                    <a>Insert Item</a>
                   </li>
                 </ul>
               </div>
