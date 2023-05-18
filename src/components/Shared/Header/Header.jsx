@@ -58,7 +58,7 @@ const Header = () => {
           <ul className=" menu-horizontal px-1 nav relative">{navOption}</ul>
         </div>
         <div className="navbar-end">
-          <Link>Sign In</Link>
+          <Link to={"/signin"}>Sign In</Link>
         </div>
       </div>
     </Headroom>
