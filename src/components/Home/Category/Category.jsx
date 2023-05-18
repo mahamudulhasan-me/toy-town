@@ -81,21 +81,82 @@ const Category = () => {
           </h4>
         </div>
       </div>
-      <div className="grid grid-cols-3 mt-24">
-        <div className="row-span-2 relative">
-          <img src={cat1} alt="" className="rounded-lg " />
-          <div className="absolute top-0 left-0 right-0 bottom-0  text-center pt-10">
-            <span className="bg-white px-2 tracking-widest">20 % Off</span>
+      <div className="grid grid-cols-3 mt-24 gap-6 ">
+        {/* other category 1 */}
+        <div className="row-span-2 relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8">
+          <img
+            src={cat1}
+            alt=""
+            className="rounded-lg w-full group-hover:scale-110 transition-all duration-700"
+          />
+          <div className="absolute top-0 left-0 right-0 bottom-0  text-center pt-10 ">
+            <span className="bg-white text-sm font-semibold text-gray-800 px-2 py-1 tracking-[0.5rem] rounded-md ">
+              20 % OFF
+            </span>
+            <h2 className="text-sec  font-nunito text-3xl mt-7 duration-500 group-hover:mt-5 ">
+              Trendy Kids Toys
+            </h2>
+            <button className="underline hover:text-sec hover:tracking-widest duration-150">
+              Shop Now
+            </button>
           </div>
         </div>
-        <div>
-          <img src={cat2} alt="" className="rounded-md" />
+        {/* other category 2  */}
+        <div className="relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8">
+          <img
+            src={cat2}
+            alt=""
+            className="rounded-lg w-full group-hover:scale-110 transition-all duration-700"
+          />
+          <div className="absolute top-0 left-5 right-0 bottom-0  text-left pt-10 ">
+            <span className="bg-white text-sm font-semibold text-gray-800 px-2 py-1 tracking-[0.5rem] rounded-md ">
+              FLAT DEAL
+            </span>
+            <h2 className="text-sec  font-nunito text-2xl mt-7 duration-500 group-hover:mt-5 ">
+              New Toy Shoes
+            </h2>
+            <button className="underline hover:text-sec hover:tracking-widest duration-150">
+              Shop Now
+            </button>
+          </div>
         </div>
-        <div className="row-span-2">
-          <img src={cat4} alt="" />
+        {/* other category 3  */}
+        <div className="row-span-2 relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8">
+          <img
+            src={cat4}
+            alt=""
+            className="rounded-lg w-full group-hover:scale-110 transition-all duration-700"
+          />
+          <div className="absolute top-0 left-5 right-0 bottom-0  text-center pt-10 ">
+            <span className="bg-white text-sm font-semibold text-gray-800 uppercase px-2 py-1 tracking-[0.5rem] rounded-md ">
+              Big Discount
+            </span>
+            <h2 className="text-sec  font-nunito text-3xl mt-7 duration-500 group-hover:mt-5 ">
+              Kid's Toys & Games
+            </h2>
+            <button className="underline hover:text-sec hover:tracking-widest duration-150">
+              Shop Now
+            </button>
+          </div>
         </div>
-        <div>
-          <img src={cat3} alt="" />
+        {/* other category 4  */}
+        <div className="relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8">
+          <img
+            src={cat3}
+            alt=""
+            className="rounded-lg w-full group-hover:scale-110 transition-all duration-700"
+          />
+          <div className="absolute top-0 left-5 right-5 bottom-0  text-right pt-10 ">
+            <span className="bg-white text-sm font-semibold text-gray-800  uppercase px-2 py-1 tracking-[0.5rem] rounded-md">
+              On Sale!
+            </span>
+            <h2 className="text-sec  font-nunito text-2xl mt-7 duration-500 group-hover:mt-5 ">
+              Fancy Toys
+            </h2>
+            <button className="underline  hover:text-sec hover:tracking-widest duration-150">
+              Shop Now
+            </button>
+          </div>
         </div>
       </div>
     </div>
