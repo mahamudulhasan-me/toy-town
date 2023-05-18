@@ -56,7 +56,9 @@ const Header = () => {
         <ul className=" menu-horizontal px-1 nav relative">{navOption}</ul>
       </div>
       <div className="navbar-end">
-        <Link>Sign In</Link>
+        <Link className="bg-sec px-7 py-3 rounded-md text-white hover:bg-transparent hover:ring-2 ring-sec ease-out">
+          Sign In
+        </Link>
       </div>
     </div>
   );
