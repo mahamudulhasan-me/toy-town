@@ -15,21 +15,29 @@ const Header = () => {
   };
   const navOption = (
     <>
-      <li>
-        <Link to={"/"}>Home</Link>
-      </li>
-      <li>
-        <Link to={"/blog"}>Blog</Link>
-      </li>
-      <li>
-        <Link to={"/allToys"}>All Toys</Link>
-      </li>
-      <li>
-        <Link to={"/myToys"}>My Toys</Link>
-      </li>
-      <li>
-        <Link to={"/add-a-toy"}>Add A Toy</Link>
-      </li>
+      <Link to={"/"}>
+        <li>Home</li>{" "}
+      </Link>
+
+      <Link to={"/blog"}>
+        <li>Blog</li>
+      </Link>
+
+      <Link to={"/allToys"}>
+        <li>All Toys</li>
+      </Link>
+
+      {user && (
+        <>
+          <Link to={"/myToys"}>
+            <li>My Toys</li>
+          </Link>
+
+          <Link to={"/add-a-toy"}>
+            <li>Add A Toy</li>
+          </Link>
+        </>
+      )}
     </>
   );
   return (

@@ -1,24 +1,22 @@
 import React, { useContext } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import { useForm } from "react-hook-form";
-import {
-  FaCalendarCheck,
-  FaCartPlus,
-  FaHome,
-  FaPaperPlane,
-  FaRegCalendarAlt,
-  FaRocketchat,
-  FaUserAlt,
-} from "react-icons/fa";
-import logo from "../../../assets/images/Logo.png";
+
 import { AuthContext } from "../../../provider/AuthProvider";
-import AdminOption from "../../Shared/AdminOption/AdminOption";
+import AdminNav from "../../Shared/AdminNav/AdminNav";
 import SectionTopBanner from "../../Shared/SectionTopBanner/SectionTopBanner";
 const AddToy = () => {
   const { user } = useContext(AuthContext);
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (toyDetails) => {
+    fetch(`http://localhost:4040/toys`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(toyDetails),
+    });
     console.log(toyDetails);
   };
   return (
@@ -26,33 +24,7 @@ const AddToy = () => {
       <SectionTopBanner sectionName="Add Toy" sectionTitle="Add Latest Toy" />
       <div className="bg-[#E9EDF4] min-h-screen px-[10%] shadow-2xl pt-10">
         <div className="grid grid-cols-12 justify-between  items-start ">
-          <div className="bg-white col-span-3 rounded-t-lg">
-            <div className=" shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]">
-              <img src={logo} alt="" className=" pl-5 " />
-            </div>
-            <div className="text-gray-500 mt-10 ">
-              <p className="font-semibold pl-5">Main</p>
-              <div className="">
-                <AdminOption name="Dashboard" icon={<FaHome />} />
-                <AdminOption name="Email" icon={<FaPaperPlane />} />
-                <AdminOption name="Todo" icon={<FaCalendarCheck />} />
-                <AdminOption name="User" icon={<FaUserAlt />} />
-                <AdminOption name="Calender" icon={<FaRegCalendarAlt />} />
-                <AdminOption name="Chat" icon={<FaRocketchat />} />
-                <AdminOption name="eCommerce" icon={<FaCartPlus />} />
-              </div>
-              <p className="font-semibold pl-5 mt-8">Components</p>
-              <div className="">
-                <AdminOption name="Dashboard" icon={<FaHome />} />
-                <AdminOption name="Email" icon={<FaPaperPlane />} />
-                <AdminOption name="Todo" icon={<FaCalendarCheck />} />
-                <AdminOption name="User" icon={<FaUserAlt />} />
-                <AdminOption name="Calender" icon={<FaRegCalendarAlt />} />
-                <AdminOption name="Chat" icon={<FaRocketchat />} />
-                <AdminOption name="eCommerce" icon={<FaCartPlus />} />
-              </div>
-            </div>
-          </div>
+          <AdminNav />
           <div className="col-span-8 shadow-inner">
             <div className="w-full bg-white px-5 py-[5px] rounded-t-lg">
               <h2>Insert Item</h2>
@@ -87,13 +59,23 @@ const AddToy = () => {
                         className="toyAdd-form"
                       />
                     </div>
-                    <div>
-                      <label className="text-sm">Toy Image</label> <br />
-                      <input
-                        required
-                        {...register("image")}
-                        className="toyAdd-form"
-                      />
+                    <div className="flex gap-1">
+                      <div>
+                        <label className="text-sm">Image-1</label> <br />
+                        <input
+                          required
+                          {...register("image1")}
+                          className="toyAdd-form"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-sm">Image-2</label> <br />
+                        <input
+                          required
+                          {...register("image2")}
+                          className="toyAdd-form"
+                        />
+                      </div>
                     </div>
                     <div>
                       <label className="text-sm">Seller Name</label> <br />
