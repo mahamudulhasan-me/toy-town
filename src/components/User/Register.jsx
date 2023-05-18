@@ -38,12 +38,10 @@ const Register = ({ signIn, setSignIn }) => {
   const handleRegisterNewUser = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
-    const photo = form.photo.value;
-    const email = form.email.value;
-    console.log({ name, photo, email, password });
+
     if (!passError) {
       const form = e.target;
+      const email = form.email.value;
       const name = form.name.value;
       const photo = form.photo.value;
       registerNewUser(email, password)
@@ -108,7 +106,11 @@ const Register = ({ signIn, setSignIn }) => {
         </div>
 
         <div className="flex items-center gap-2 ml-5 text-gray-500">
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            className="w-4 h-4"
+            onClick={() => setAcceptTerms(!acceptTerms)}
+          />
           <p>
             I agree with{" "}
             <Link className="font-semibold text-blue-600 underline">
@@ -117,7 +119,8 @@ const Register = ({ signIn, setSignIn }) => {
           </p>
         </div>
         <p className="font-semibold text-rose-600">{passError}</p>
-        <AwesomeButton type="primary">
+
+        <AwesomeButton disabled={acceptTerms} type="primary">
           <div className="w-24  ">Sign Up</div>
         </AwesomeButton>
       </form>

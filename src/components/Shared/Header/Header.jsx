@@ -75,7 +75,11 @@ const Header = () => {
                   className="tooltip z-50 hover:tooltip-open tooltip-left"
                   data-tip={user?.displayName && user?.displayName}
                 >
-                  <img src={user?.photoURL} alt="" className="rounded-full" />
+                  <img
+                    src={user?.photoURL}
+                    alt=""
+                    className=" w-12 h-12 rounded-full"
+                  />
                 </div>
               </div>
 
