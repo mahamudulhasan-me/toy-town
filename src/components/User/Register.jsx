@@ -4,12 +4,12 @@ import { AwesomeButton } from "react-awesome-button";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+
 import { AuthContext } from "../../provider/AuthProvider";
 import SocialSignin from "./SocialSignin";
 
 const Register = ({ signIn, setSignIn }) => {
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passError, setPassError] = useState("");
   const [acceptTerms, setAcceptTerms] = useState(true);
@@ -37,7 +37,6 @@ const Register = ({ signIn, setSignIn }) => {
 
   const handleRegisterNewUser = (e) => {
     e.preventDefault();
-    const form = e.target;
 
     if (!passError) {
       const form = e.target;
@@ -66,6 +65,7 @@ const Register = ({ signIn, setSignIn }) => {
       <form onSubmit={handleRegisterNewUser} className="space-y-5 ">
         <div className="grid grid-cols-2 gap-5 px-5">
           <input
+            required
             type="text"
             name="name"
             placeholder="Full Name"
@@ -78,6 +78,7 @@ const Register = ({ signIn, setSignIn }) => {
             className="bg-[#F8F8F8]  py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
           />
           <input
+            required
             type="text"
             placeholder="Email"
             name="email"
@@ -85,6 +86,7 @@ const Register = ({ signIn, setSignIn }) => {
           />
           <div className="relative">
             <input
+              required
               type={`${showPassword ? "text" : "password"}`}
               name="password"
               onChange={getPassword}

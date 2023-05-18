@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import login from "../../assets/images/login.svg";
+
 import { AuthContext } from "../../provider/AuthProvider";
 import Register from "./Register";
 import SocialSignin from "./SocialSignin";
