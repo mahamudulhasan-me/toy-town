@@ -1,4 +1,5 @@
 import React from "react";
+import { AwesomeButton } from "react-awesome-button";
 import Headroom from "react-headroom";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/Logo.png";
@@ -58,7 +59,9 @@ const Header = () => {
           <ul className=" menu-horizontal px-1 nav relative">{navOption}</ul>
         </div>
         <div className="navbar-end">
-          <Link to={"/signin"}>Sign In</Link>
+          <AwesomeButton type="secondary">
+            <Link to={"/signin"}>Sign In</Link>
+          </AwesomeButton>
         </div>
       </div>
     </Headroom>
