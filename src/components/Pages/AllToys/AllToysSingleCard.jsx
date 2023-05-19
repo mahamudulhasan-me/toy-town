@@ -2,11 +2,11 @@ import { Rating } from "@smastrom/react-rating";
 import React, { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-const ToyCard = ({ toyDetails }) => {
+const AllToysSingleCard = ({ toyDetails }) => {
   const [clickedId, setClickedId] = useState(null);
   const { _id, name, image1, image2, price, rating } = toyDetails;
   return (
-    <div className="rounded-lg group transition-shadow duration-150 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] flex flex-col justify-between ">
+    <div className="rounded-lg  group transition-shadow duration-150 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
       <div className="h-3/4  relative overflow-hidden">
         <img
           src={image1}
@@ -14,7 +14,7 @@ const ToyCard = ({ toyDetails }) => {
           alt=""
         />
         <div className=" transition-all group-hover:duration-500  absolute group-hover:left-0 group-hover:right-0 left-1/2 right-1/2 group-hover:bottom-0 group-hover:top-0 bottom-1/2 top-1/2 ">
-          <img src={image2} alt="" className="w-full" />
+          <img src={image2} alt="" className="w-full rounded-lg" />
         </div>
       </div>
       <div className="flex py-2 justify-between items-center bg-slate-100 group-hover:bg-pri rounded-b-lg transition-all duration-300 px-4">
@@ -58,4 +58,4 @@ const ToyCard = ({ toyDetails }) => {
   );
 };
 
-export default ToyCard;
+export default AllToysSingleCard;

@@ -2,15 +2,18 @@ import React, { useEffect, useState } from "react";
 
 const ToyDetails = ({ toyId }) => {
   const [toy, setToy] = useState({});
-  const [id, setId] = useState(toyId);
 
   useEffect(() => {
-    fetch(`http://localhost:4040/toy-details/${id}`)
+    fetch(`http://localhost:4040/toy-details/${toyId}`)
       .then((res) => res.json())
       .then((data) => setToy(data));
-  }, [id]);
+  }, [toyId]);
 
-  return <div>ToyDetails {toy.name}</div>;
+  return (
+    <div>
+      ToyDetails {toyId} {toy.name}
+    </div>
+  );
 };
 
 export default ToyDetails;
