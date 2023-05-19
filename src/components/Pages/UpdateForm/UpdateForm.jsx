@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
 
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 const UpdateForm = ({ toyId }) => {
   const { register, handleSubmit } = useForm();
   const [toyInfo, setToyInfo] = useState();
@@ -11,14 +12,41 @@ const UpdateForm = ({ toyId }) => {
       .then((data) => setToyInfo(data));
   }, [toyId]);
   const onSubmit = (updatedInfo) => {
+    fetch(`http://localhost:4040/update-toy-details/${toyId}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedInfo),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire(
+            "Updated Successfully!",
+            "You clicked the button!",
+            "success"
+          );
+        }
+      });
     console.log(updatedInfo);
   };
   return (
     <>
       <div>
-        <div className="bg-white p-5 rounded-md">
-          <h2 className="border-b text-xl pb-4">Update Your Toy</h2>
-
+        <div className="bg-white rounded-md">
+          <div className="flex justify-between border-b pb-4 items-center">
+            <h2 className="text-xl">Update Your Toy</h2>{" "}
+            <div className="modal-action">
+              <label
+                htmlFor="my-modal-5"
+                className="bg-rose-600 text-white text-sm px-3 py-2 cursor-pointer rounded-md"
+              >
+                Close
+              </label>
+            </div>
+          </div>
           <form onSubmit={handleSubmit(onSubmit)} className="mt-5">
             <div className="grid grid-cols-2 gap-3 mb-5">
               <div>

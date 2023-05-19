@@ -2,6 +2,7 @@ import { Rating } from "@smastrom/react-rating";
 import React, { useState } from "react";
 import { FaEdit, FaEnvelope, FaTrashAlt, FaUserLock } from "react-icons/fa";
 import { useLoaderData } from "react-router";
+import Swal from "sweetalert2";
 import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
 import SectionTopBanner from "../../Shared/SectionTopBanner/SectionTopBanner";
 import UpdateForm from "../UpdateForm/UpdateForm";
@@ -10,6 +11,30 @@ const MyToys = () => {
   const myToysInit = useLoaderData();
   const [myToys, setMyToys] = useState(myToysInit);
   const [clickedId, setClickedId] = useState("");
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:4040/delete-toy/${id}`, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              setMyToys(myToys.filter((toy) => toy._id !== id));
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
+      }
+    });
+  };
   return (
     <div>
       <SectionTopBanner sectionTitle="All your toys" sectionName="my-toys" />
@@ -86,17 +111,12 @@ const MyToys = () => {
                         <div className="modal">
                           <div className="modal-box w-3/5 max-w-5xl">
                             <UpdateForm toyId={clickedId} />
-                            <div className="modal-action">
-                              <label
-                                htmlFor="my-modal-5"
-                                className="bg-rose-600 text-white text-lg px-2 py-1 rounded-md"
-                              >
-                                Cancel Update
-                              </label>
-                            </div>
                           </div>
                         </div>
-                        <FaTrashAlt className="text-rose-600" />
+                        <FaTrashAlt
+                          onClick={() => handleDelete(toy._id)}
+                          className="text-rose-600 cursor-pointer"
+                        />
                       </div>
                     </td>
                     <td></td>
