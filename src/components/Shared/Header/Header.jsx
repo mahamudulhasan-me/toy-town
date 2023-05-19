@@ -29,7 +29,7 @@ const Header = () => {
 
       {user && (
         <>
-          <Link to={"/myToys"}>
+          <Link to={`/my-toys/${user?.uid}`}>
             <li>My Toys</li>
           </Link>
 
