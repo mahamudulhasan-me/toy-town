@@ -1,9 +1,10 @@
 import { Rating } from "@smastrom/react-rating";
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import ToyDetails from "../../Shared/ToyDetails/ToyDetails";
 
 const ToyCard = ({ toyDetails }) => {
+  const [clickedId, setClickedId] = useState(null);
   const { _id, name, image1, image2, price, rating } = toyDetails;
   return (
     <div className="rounded-lg group transition-shadow duration-150 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] flex flex-col justify-between ">
@@ -30,14 +31,26 @@ const ToyCard = ({ toyDetails }) => {
             {rating}/5
           </p>
         </div>
-        <Link to={`/toy-details/${_id}`}>
+        <label htmlFor="my-modal-5" onClick={() => setClickedId(_id)}>
           <div
             title="View Details"
             className="w-10 h-10 hover:pl-2 duration-150 rounded-full bg-pri flex justify-center items-center text-xl group-hover:border text-sec"
           >
             <AiOutlineArrowRight />
           </div>
-        </Link>
+        </label>
+        {/* modal body  */}
+        <input type="checkbox" id="my-modal-5" className="modal-toggle" />
+        <div className="modal">
+          <div className="modal-box w-11/12 max-w-5xl">
+            <ToyDetails toyId={clickedId} />
+            <div className="modal-action">
+              <label htmlFor="my-modal-5" className="btn">
+                Yay!
+              </label>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
