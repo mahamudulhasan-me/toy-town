@@ -44,7 +44,9 @@ const AllToys = () => {
           </span>
         </div>
         {loader ? (
-          <BeatLoader color="#36d7b7" />
+          <div className="flex justify-center mt-10  h-56 ">
+            <BeatLoader color="#36d7b7" />
+          </div>
         ) : (
           <div className="grid grid-cols-4 gap-5 min-h-min">
             {toys.length === 0 ? (

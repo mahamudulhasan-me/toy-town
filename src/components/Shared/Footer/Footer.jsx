@@ -1,0 +1,77 @@
+import React from "react";
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import logo from "../../../assets/images//Logo.png";
+import footerBg from "../../../assets/images/footer_bg.png";
+import visa from "../../../assets/images/payment/visa.png";
+const Footer = () => {
+  return (
+    <div
+      className="bg-cover px-[5%] py-10"
+      style={{ backgroundImage: `url(${footerBg})` }}
+    >
+      <div className="text-[1rem] text-gray-600  grid grid-cols-4 gap-10">
+        <div>
+          <img src={logo} alt="" />
+          <p className="mt-6 leading-6">
+            This is Photoshops version of Lorem fenIpsum. Proin gravida nibh
+            sagitt sem nibh id elit.Proin gravida nibh sagitt sem nibh id elit
+          </p>
+        </div>
+        <div>
+          <h2 className="text-2xl  text-sec mt-5 mb-3 font-nunito">
+            Information
+          </h2>
+          <ul className="space-y-2.5">
+            <li>About Us</li>
+            <li>Information</li>
+            <li>FAQs</li>
+            <li>Terms Of Use</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-2xl  text-sec mt-5 mb-3 font-nunito">Account</h2>
+          <ul className="space-y-2.5">
+            <li>My Account</li>
+            <li>Specials</li>
+            <li>Order History</li>
+            <li>Newsletter</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-2xl  text-sec mt-5 mb-3 font-nunito">
+            Store Information
+          </h2>
+          <div className="space-y-6">
+            <p className="flex items-center gap-2">
+              <FaMapMarkerAlt className="text-xl" />
+              Sonargoan Road, Sector-12 <br /> Uttara, Dhaka-1230
+            </p>
+            <p className="flex items-center gap-2">
+              <FaPhoneAlt className="text-xl" />
+              +8801710142370 <br />
+              +8801511242370
+            </p>
+            <p className="flex items-center text-gray-800 gap-2">
+              <FaEnvelope className="text-xl" />
+              contact@toytown.com
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex justify-between items-center mt-5 text-sm text-gray-900">
+        <p>
+          Powered By <span className="text-pri">OpenCart</span> Your Store ©
+          2023
+        </p>
+        <div>
+          <img src={visa} alt="" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;
