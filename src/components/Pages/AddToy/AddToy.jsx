@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import { useForm } from "react-hook-form";
 
+import Swal from "sweetalert2";
 import { AuthContext } from "../../../provider/AuthProvider";
 import AdminNav from "../../Shared/AdminNav/AdminNav";
 import SectionTopBanner from "../../Shared/SectionTopBanner/SectionTopBanner";
@@ -10,13 +11,24 @@ const AddToy = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (toyDetails) => {
+    toyDetails.sellerUid = user?.uid;
     fetch(`http://localhost:4040/toys`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(toyDetails),
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire(
+            "Toy Added Successfully!",
+            "You clicked the button!",
+            "success"
+          );
+        }
+      });
     console.log(toyDetails);
   };
   return (
@@ -104,9 +116,9 @@ const AddToy = () => {
                       >
                         <option value="N/A">Select Category</option>
 
-                        <option value="classic">Classic Collectibles</option>
-                        <option value="police">Police Pursuit</option>
-                        <option value="sports">Sports Speedsters</option>
+                        <option value="Classic">Classic Collectibles</option>
+                        <option value="policePursuit">Police Pursuit</option>
+                        <option value="Sports">Sports Speedsters</option>
                       </select>
                     </div>
                     <div>
@@ -121,9 +133,8 @@ const AddToy = () => {
                     <div>
                       <label className="text-sm">Price</label> <br />
                       <input
-                        type="number"
                         required
-                        {...register("quantity")}
+                        {...register("price")}
                         className="toyAdd-form"
                       />
                     </div>
