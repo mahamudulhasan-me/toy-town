@@ -13,8 +13,7 @@ const AllToys = () => {
     <div>
       {toys.map((toy) => (
         <div key={toy._id} className="group">
-          <img className="group-hover:hidden" src={toy.image1}></img>
-          <img className="hidden group-hover:block" src={toy.image2}></img>
+          <img src={toy.image1}></img>
         </div>
       ))}
     </div>
