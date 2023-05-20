@@ -1,35 +1,13 @@
 import { Rating } from "@smastrom/react-rating";
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 const ToyCard = ({ toyDetails }) => {
-  const [clickedId, setClickedId] = useState("");
+  const { user } = useContext(AuthContext);
   const { _id, name, image1, image2, price, rating } = toyDetails;
-  const [singleToyDetails, setSingleToyDetails] = useState();
-  const [details, setDetails] = useState({});
-
-  const handleDetails = (id) => {
-    fetch(`http://localhost:4040/toy-details/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setDetails({});
-        setDetails(data);
-      });
-  };
-  console.log(details);
-  // if (singleToyDetails) {
-  //   setDetails(singleToyDetails.map((item) => item));
-  // }
-  // console.log(clickedId);
-  // console.log(details);
-  // const handleDetails = (id) => {
-  //   fetch(`http://localhost:4040/toy-details/${id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setSingleToyDetails(data[0]);
-  //     });
-  // };
 
   return (
     <div className="rounded-lg group transition-shadow duration-150 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] flex flex-col justify-between ">
@@ -57,7 +35,12 @@ const ToyCard = ({ toyDetails }) => {
           </p>
         </div>
 
-        <Link to={`toy-details/${_id}`}>
+        <Link
+          to={`toy-details/${_id}`}
+          onClick={() =>
+            !user ? toast.warning("Please login for view details") : ""
+          }
+        >
           <div
             title="View Details"
             className="w-10 h-10 hover:pl-2 duration-150 rounded-full bg-pri flex justify-center items-center text-xl group-hover:border text-sec"

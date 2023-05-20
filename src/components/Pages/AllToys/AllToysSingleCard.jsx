@@ -1,14 +1,18 @@
 import { Rating } from "@smastrom/react-rating";
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { FaUserLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 const AllToysSingleCard = ({ toyDetails }) => {
-  const [clickedId, setClickedId] = useState(null);
-  const { _id, name, image1, image2, price, rating } = toyDetails;
+  const { user } = useContext(AuthContext);
+  const { _id, name, image1, image2, price, rating, sellerName, sellerEmail } =
+    toyDetails;
   return (
-    <div className="rounded-lg  group transition-shadow duration-150 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
-      <div className="h-3/4  relative overflow-hidden">
+    <div className="rounded-lg mb-16 group transition-shadow duration-150 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+      <div className="h-[70%]  relative overflow-hidden">
         <img
           src={image1}
           className="group-hover:hidden rounded-t-lg transition-all "
@@ -30,12 +34,24 @@ const AllToysSingleCard = ({ toyDetails }) => {
             <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
             {rating}/5
           </p>
+          <div className="border-l-8 border-pri group-hover:border-sec duration-300 rounded-l pl-1  mt-4">
+            <p className="font-semibold ">Seller:</p>
+            <p className="flex  items-center gap-2">
+              <FaUserLock className="text-lg text-gray-500" /> {sellerName}
+            </p>
+          </div>
         </div>
 
-        <Link to={`/toy-details/${_id}`}>
+        <Link
+          to={`/toy-details/${_id}`}
+          onClick={() =>
+            !user
+              ? toast.warning("You have to log in first to view details")
+              : ""
+          }
+        >
           <div
             title="View Details"
-            onClick={() => setClickedId(_id)}
             className="w-10 h-10 hover:pl-2 duration-150 rounded-full bg-pri flex justify-center items-center text-xl group-hover:border text-sec"
           >
             <AiOutlineArrowRight />

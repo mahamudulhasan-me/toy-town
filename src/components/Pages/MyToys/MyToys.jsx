@@ -10,10 +10,10 @@ import {
 import { useLoaderData } from "react-router";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
 import SectionTopBanner from "../../Shared/SectionTopBanner/SectionTopBanner";
 import UpdateForm from "../UpdateForm/UpdateForm";
-import useTitle from "../../../hooks/useTitle";
 
 const MyToys = () => {
   const myToysInit = useLoaderData();
@@ -64,7 +64,7 @@ const MyToys = () => {
                 </tr>
               </thead>
               <tbody>
-                {myToys.map((toy, index) => (
+                {myToys?.map((toy, index) => (
                   <tr key={toy._id}>
                     <th>{index + 1}</th>
                     <td>
