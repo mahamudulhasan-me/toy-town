@@ -33,8 +33,8 @@ const ToyDetails = () => {
       />
       <div className="w-4/5 mx-auto my-10 text-gray-700">
         <div className="grid grid-cols-12">
-          <div className="col-span-4">
-            <img src={image1} alt="" />
+          <div className="col-span-4 ">
+            <img src={image1} alt="" className=" rounded-xl border-2" />
           </div>
           <div className="col-span-8">
             <h2 className=" text-2xl font-nunito">{name}</h2>

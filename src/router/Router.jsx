@@ -6,6 +6,7 @@ import MyToys from "../components/Pages/MyToys/MyToys";
 import ToyDetails from "../components/Pages/ToyDetails/ToyDetails";
 import SignIn from "../components/User/SignIn";
 import Main from "../layout/Main";
+import ProtectedRoute from "../protectedRoute/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -22,11 +23,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-a-toy",
-        element: <AddToy />,
+        element: (
+          <ProtectedRoute>
+            <AddToy />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "toy-details/:id",
-        element: <ToyDetails />,
+        element: (
+          <ProtectedRoute>
+            <ToyDetails />
+          </ProtectedRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:4040/toy-details/${params?.id}`),
       },
@@ -36,7 +45,11 @@ const router = createBrowserRouter([
       },
       {
         path: "my-toys/:uid",
-        element: <MyToys />,
+        element: (
+          <ProtectedRoute>
+            <MyToys />
+          </ProtectedRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:4040/my-toys/${params?.uid}`),
       },

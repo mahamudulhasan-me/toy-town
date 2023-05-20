@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../../provider/AuthProvider";
 import SocialSignin from "./SocialSignin";
 
-const Register = ({ signIn, setSignIn }) => {
+const Register = ({ signIn, setSignIn, path }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [passError, setPassError] = useState("");
@@ -52,7 +52,7 @@ const Register = ({ signIn, setSignIn }) => {
           })
             .then(toast.success("Registration Successful"))
             .catch((err) => toast(err.message));
-          navigate("/");
+          navigate(path);
         })
         .catch((error) => setPassError(error.message));
     }

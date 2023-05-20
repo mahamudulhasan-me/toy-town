@@ -45,8 +45,8 @@ const MyToys = () => {
   return (
     <div>
       <SectionTopBanner sectionTitle="All your toys" sectionName="my-toys" />
-      <div className="w-4/5 mx-auto">
-        <SectionHeader />
+      <div className="w-4/5 mx-auto mb-10">
+        <SectionHeader section="my toys" title="Take Care Your All Toys" />
         <div>
           <div className="overflow-x-auto">
             <table className="table table-zebra w-full text-gray-700">
@@ -70,7 +70,7 @@ const MyToys = () => {
                         <img
                           src={toy.image1}
                           alt=""
-                          className="w-24 h-20 rounded-md "
+                          className="w-24 h-20 rounded-xl border "
                         />
                         <div>
                           <p className="text-lg">{toy.name}</p>

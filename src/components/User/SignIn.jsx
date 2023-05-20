@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import login from "../../assets/images/login.svg";
 
@@ -15,6 +15,9 @@ const SignIn = () => {
   const { logInWithEmailPassword } = useContext(AuthContext);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+  const path = location.state || "/";
   // login with email and password
   const handleEmailPasswordSignIn = (e) => {
     e.preventDefault();
@@ -26,7 +29,7 @@ const SignIn = () => {
         .then((user) => {
           const loggedUser = user.user;
           toast.success(`Welcome ${loggedUser.displayName}`);
-          navigate("/");
+          navigate(path);
           setError("");
         })
         .catch((error) => setError(error.message));
@@ -101,7 +104,7 @@ const SignIn = () => {
           </p>
         </div>
       ) : (
-        <Register signIn={isSignIn} setSignIn={setIsSignIn} />
+        <Register path={path} signIn={isSignIn} setSignIn={setIsSignIn} />
       )}
     </div>
   );

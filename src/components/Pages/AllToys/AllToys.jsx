@@ -28,13 +28,13 @@ const AllToys = () => {
   return (
     <div>
       <SectionTopBanner sectionName="all-toys" sectionTitle="All Latest Toys" />
-      <div className="px-[5%]">
-        <SectionHeader />
+      <div className="px-[5%] mb-10">
+        <SectionHeader section="all toys" title="Search & Get Your Toy" />
 
         <div className="w-[30%] mx-auto -mt-5 relative mb-5">
           <input
             onChange={handleSearch}
-            type="search"
+            type="text"
             placeholder="Search by Name & Category "
             className="border w-full py-3 rounded-md px-2  border-pri focus:outline-none focus:placeholder-slate-800"
             autoFocus
