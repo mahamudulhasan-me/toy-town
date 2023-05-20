@@ -11,10 +11,11 @@ import category3 from "../../../assets/images/products/ph.jpg";
 import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
 const Category = () => {
   return (
-    <div className="px-[5%]  my-28">
-      <SectionHeader />
+    <div className="px-[5%]  my-24">
+      <SectionHeader section="Category" title="Choose Favorite Category" />
 
       <div className="grid grid-cols-5 gap-10">
+        {/* category 1  */}
         <div className="relative group cursor-pointer">
           <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
             <img
@@ -23,11 +24,13 @@ const Category = () => {
               className="rounded-full group-hover:scale-110 duration-300 transition-all ease-in-out"
             />
           </div>
-          <div className="ring-2 ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-[#F5F5F5] absolute top-20"></div>
-          <h4 className="absolute -bottom-10 left-10 text-xl group-hover:text-pri text-center">
-            Speedeez
-          </h4>
+          <div className="ring-1 flex justify-center items-end  ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-slate-100 absolute top-20">
+            <h4 className="mb-2 text-xl font-nunito text-slate-900 group-hover:text-pri">
+              Classic
+            </h4>
+          </div>
         </div>
+        {/* category 2  */}
         <div className="relative group cursor-pointer">
           <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
             <img
@@ -36,11 +39,13 @@ const Category = () => {
               className="rounded-full group-hover:scale-110 duration-300 transition-all ease-in-out"
             />
           </div>
-          <div className="ring-2 ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-[#F5F5F5]  absolute top-20"></div>
-          <h4 className="absolute -bottom-10 left-10 text-xl group-hover:text-pri text-center">
-            Speedeez
-          </h4>
+          <div className="ring-1 flex justify-center items-end  ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-slate-100 absolute top-20">
+            <h4 className="mb-2 text-xl font-nunito text-slate-900 group-hover:text-pri">
+              Monster Trucks
+            </h4>
+          </div>
         </div>
+        {/* category 3  */}
         <div className="relative group cursor-pointer">
           <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
             <img
@@ -49,11 +54,13 @@ const Category = () => {
               className="rounded-full group-hover:scale-110 duration-300 transition-all ease-in-out"
             />
           </div>
-          <div className="ring-2 ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-[#F5F5F5]  absolute top-20"></div>
-          <h4 className="absolute -bottom-10 left-10 text-xl group-hover:text-pri text-center">
-            Speedeez
-          </h4>
+          <div className="ring-1 flex justify-center items-end  ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-slate-100 absolute top-20">
+            <h4 className="mb-2 text-xl font-nunito text-slate-900 group-hover:text-pri">
+              Police Pursuit
+            </h4>
+          </div>
         </div>
+        {/* category 4 */}
         <div className="relative group cursor-pointer">
           <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
             <img
@@ -62,11 +69,13 @@ const Category = () => {
               className="rounded-full group-hover:scale-110 duration-300 transition-all ease-in-out"
             />
           </div>
-          <div className="ring-2 ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-[#F5F5F5]  absolute top-20"></div>
-          <h4 className="absolute -bottom-10 left-10 text-xl group-hover:text-pri text-center">
-            Speedeez
-          </h4>
+          <div className="ring-1 flex justify-center items-end  ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-slate-100 absolute top-20">
+            <h4 className="mb-2 text-xl font-nunito text-slate-900 group-hover:text-pri">
+              Off-Road Adventure
+            </h4>
+          </div>
         </div>
+        {/* category 5 */}
         <div className="relative group cursor-pointer">
           <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
             <img
@@ -75,15 +84,16 @@ const Category = () => {
               className="rounded-full group-hover:scale-110 duration-300 transition-all ease-in-out"
             />
           </div>
-          <div className="ring-2 ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-[#F5F5F5]  absolute top-20"></div>
-          <h4 className="absolute -bottom-10 left-10 text-xl group-hover:text-pri text-center">
-            Speedeez
-          </h4>
+          <div className="ring-1 flex justify-center items-end  ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-slate-100 absolute top-20">
+            <h4 className="mb-2 text-xl font-nunito text-slate-900 group-hover:text-pri">
+              Transforming Robots
+            </h4>
+          </div>
         </div>
       </div>
       <div className="grid grid-cols-3 mt-24 gap-6 ">
         {/* other category 1 */}
-        <div className="row-span-2 relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8">
+        <div className="row-span-2 relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8  hover:ring-opacity-5">
           <img
             src={cat1}
             alt=""
@@ -102,7 +112,7 @@ const Category = () => {
           </div>
         </div>
         {/* other category 2  */}
-        <div className="relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8">
+        <div className="relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8 hover:ring-opacity-5">
           <img
             src={cat2}
             alt=""
@@ -121,7 +131,7 @@ const Category = () => {
           </div>
         </div>
         {/* other category 3  */}
-        <div className="row-span-2 relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8">
+        <div className="row-span-2 relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8 hover:ring-opacity-5">
           <img
             src={cat4}
             alt=""
@@ -140,7 +150,7 @@ const Category = () => {
           </div>
         </div>
         {/* other category 4  */}
-        <div className="relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8">
+        <div className="relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8 hover:ring-opacity-5">
           <img
             src={cat3}
             alt=""

@@ -15,7 +15,7 @@ const CategoryProducts = () => {
   }, [category]);
   return (
     <div className="pl-[5%]">
-      <SectionHeader name="Category" title="Choose Car By Category" />
+      <SectionHeader section="showcase" title="Shop By Category" />
       <div className="grid grid-cols-12 gap-5 justify-between ">
         <div className="col-span-3">
           <div className="relative group w-full rounded-lg duration-500 overflow-hidden">

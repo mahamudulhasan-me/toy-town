@@ -27,3 +27,6 @@ h6 {
 .footer ul li {
   @apply hover:text-pri cursor-pointer;
 }
+.gallery-overly {
+  @apply flex justify-center items-center absolute left-1/2 right-1/2 bottom-1/2 top-1/2 duration-500 bg-slate-950 bg-opacity-10 group-hover:top-0 group-hover:left-0 group-hover:right-0 group-hover:bottom-0;
+}
