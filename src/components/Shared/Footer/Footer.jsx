@@ -2,14 +2,14 @@ import React from "react";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import logo from "../../../assets/images//Logo.png";
 import footerBg from "../../../assets/images/footer_bg.png";
-import visa from "../../../assets/images/payment/visa.png";
+import payment from "../../../assets/images/sslcommerz-banner.png";
 const Footer = () => {
   return (
     <div
-      className="bg-cover px-[5%] py-10"
+      className="bg-cover px-[5%] pt-10 pb-5"
       style={{ backgroundImage: `url(${footerBg})` }}
     >
-      <div className="text-[1rem] text-gray-600  grid grid-cols-4 gap-10">
+      <div className="text-[1rem] pb-5 mb-2 text-gray-600  grid grid-cols-4 gap-10 border-b border-slate-400">
         <div>
           <img src={logo} alt="" />
           <p className="mt-6 leading-6">
@@ -61,14 +61,12 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center mt-5 text-sm text-gray-900">
+      <div className="">
         <p>
-          Powered By <span className="text-pri">OpenCart</span> Your Store ©
-          2023
+          Powered By <span className="text-pri">Mahmud</span> |Toy Town © 2023
         </p>
-        <div>
-          <img src={visa} alt="" />
-        </div>
+
+        <img src={payment} alt="" />
       </div>
     </div>
   );
