@@ -1,7 +1,14 @@
 import { Rating } from "@smastrom/react-rating";
 import React, { useState } from "react";
-import { FaEdit, FaEnvelope, FaTrashAlt, FaUserLock } from "react-icons/fa";
+import {
+  FaEdit,
+  FaEnvelope,
+  FaEye,
+  FaTrashAlt,
+  FaUserLock,
+} from "react-icons/fa";
 import { useLoaderData } from "react-router";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
 import SectionTopBanner from "../../Shared/SectionTopBanner/SectionTopBanner";
@@ -117,6 +124,12 @@ const MyToys = () => {
                           onClick={() => handleDelete(toy._id)}
                           className="text-rose-600 cursor-pointer"
                         />
+                        <Link
+                          to={`/toy-details/${toy._id}`}
+                          title="View Details"
+                        >
+                          <FaEye className="text-purple-500" />
+                        </Link>
                       </div>
                     </td>
                     <td></td>

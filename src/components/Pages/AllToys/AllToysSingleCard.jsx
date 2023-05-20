@@ -1,6 +1,7 @@
 import { Rating } from "@smastrom/react-rating";
 import React, { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const AllToysSingleCard = ({ toyDetails }) => {
   const [clickedId, setClickedId] = useState(null);
@@ -30,7 +31,8 @@ const AllToysSingleCard = ({ toyDetails }) => {
             {rating}/5
           </p>
         </div>
-        <label htmlFor="my-modal-5">
+
+        <Link to={`/toy-details/${_id}`}>
           <div
             title="View Details"
             onClick={() => setClickedId(_id)}
@@ -38,21 +40,7 @@ const AllToysSingleCard = ({ toyDetails }) => {
           >
             <AiOutlineArrowRight />
           </div>
-        </label>
-        {/* modal body  */}
-        <input type="checkbox" id="my-modal-5" className="modal-toggle" />
-        <div className="modal">
-          <div className="modal-box w-11/12 max-w-5xl">
-            {/* <ToyDetails toyId={clickedId} />
-             */}
-            <p>car details coming soon</p>
-            <div className="modal-action">
-              <label htmlFor="my-modal-5" className="btn">
-                Yay!
-              </label>
-            </div>
-          </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
