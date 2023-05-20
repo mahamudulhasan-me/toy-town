@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import { Navigate, useLocation } from "react-router";
+import Preloader from "../components/Shared/Preloader/Preloader";
 import { AuthContext } from "../provider/AuthProvider";
 
 const ProtectedRoute = ({ children }) => {
-  const { user, loader } = useContext(AuthContext);
+  const { user, isLoading } = useContext(AuthContext);
   const location = useLocation();
 
-  if (loader) {
-    return <p>Loading...</p>;
+  if (isLoading) {
+    return <Preloader />;
   }
   if (!user) {
     return <Navigate to={"/signin"} state={location.pathname} replace />;

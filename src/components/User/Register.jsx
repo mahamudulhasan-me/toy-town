@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import useTitle from "../../hooks/useTitle";
 import { AuthContext } from "../../provider/AuthProvider";
 import SocialSignin from "./SocialSignin";
 
@@ -13,7 +14,7 @@ const Register = ({ signIn, setSignIn, path }) => {
   const [password, setPassword] = useState("");
   const [passError, setPassError] = useState("");
   const [acceptTerms, setAcceptTerms] = useState(true);
-
+  useTitle("Register");
   const { registerNewUser } = useContext(AuthContext);
 
   const navigate = useNavigate();

@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useLoaderData } from "react-router";
+import useTitle from "../../../hooks/useTitle";
 import SectionTopBanner from "../../Shared/SectionTopBanner/SectionTopBanner";
 
 const ToyDetails = () => {
@@ -25,6 +26,7 @@ const ToyDetails = () => {
     category,
     description,
   } = toyDetails;
+  useTitle(`${name}'s Details`);
   return (
     <div>
       <SectionTopBanner

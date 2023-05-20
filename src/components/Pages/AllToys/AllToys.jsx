@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FcSearch } from "react-icons/fc";
 import { BeatLoader } from "react-spinners";
+import useTitle from "../../../hooks/useTitle";
 import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
 import SectionTopBanner from "../../Shared/SectionTopBanner/SectionTopBanner";
 import AllToysSingleCard from "./AllToysSingleCard";
@@ -8,6 +9,7 @@ import AllToysSingleCard from "./AllToysSingleCard";
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [loader, setLoader] = useState(true);
+  useTitle("All Toys");
   useEffect(() => {
     fetch(`http://localhost:4040/toys`)
       .then((response) => response.json())

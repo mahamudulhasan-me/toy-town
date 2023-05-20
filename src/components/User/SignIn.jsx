@@ -5,15 +5,17 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import login from "../../assets/images/login.svg";
 
+import useTitle from "../../hooks/useTitle";
 import { AuthContext } from "../../provider/AuthProvider";
 import Register from "./Register";
 import SocialSignin from "./SocialSignin";
+
 const SignIn = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const { logInWithEmailPassword } = useContext(AuthContext);
-
+  useTitle("Sign In");
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);

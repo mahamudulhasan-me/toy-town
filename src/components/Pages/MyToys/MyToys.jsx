@@ -13,11 +13,13 @@ import Swal from "sweetalert2";
 import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
 import SectionTopBanner from "../../Shared/SectionTopBanner/SectionTopBanner";
 import UpdateForm from "../UpdateForm/UpdateForm";
+import useTitle from "../../../hooks/useTitle";
 
 const MyToys = () => {
   const myToysInit = useLoaderData();
   const [myToys, setMyToys] = useState(myToysInit);
   const [clickedId, setClickedId] = useState("");
+  useTitle("My Toys");
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",

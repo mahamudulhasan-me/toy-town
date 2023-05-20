@@ -3,12 +3,14 @@ import { AwesomeButton } from "react-awesome-button";
 import { useForm } from "react-hook-form";
 
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 import { AuthContext } from "../../../provider/AuthProvider";
 import AdminNav from "../../Shared/AdminNav/AdminNav";
 import SectionTopBanner from "../../Shared/SectionTopBanner/SectionTopBanner";
 const AddToy = () => {
   const { user } = useContext(AuthContext);
   const { register, handleSubmit } = useForm();
+  useTitle("Add Toy");
 
   const onSubmit = (toyDetails) => {
     toyDetails.sellerUid = user?.uid;

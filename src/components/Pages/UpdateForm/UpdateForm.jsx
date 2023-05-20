@@ -3,9 +3,11 @@ import { AwesomeButton } from "react-awesome-button";
 
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 const UpdateForm = ({ toyId }) => {
   const { register, handleSubmit } = useForm();
   const [toyInfo, setToyInfo] = useState();
+  useTitle("Update Toy");
   useEffect(() => {
     fetch(`http://localhost:4040/toy-details/${toyId}`)
       .then((response) => response.json())
