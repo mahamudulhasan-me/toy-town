@@ -1,7 +1,7 @@
 import React from "react";
 const SectionHeader = ({ section, title }) => {
   return (
-    <div className="text-center w-3/5 mx-auto my-16">
+    <div data-aos="fade-down" className="text-center w-3/5 mx-auto my-16">
       <div className="flex justify-center items-center gap-2">
         <div className="h-0.5 w-24 bg-pri rounded-xl"></div>
         <h5 className="text-sm text-sec uppercase">{section}</h5>

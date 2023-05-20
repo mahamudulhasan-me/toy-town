@@ -16,7 +16,7 @@ const Category = () => {
 
       <div className="grid grid-cols-5 gap-10">
         {/* category 1  */}
-        <div className="relative group cursor-pointer">
+        <div data-aos="zoom-in-right" className="relative group cursor-pointer">
           <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
             <img
               src={category1}
@@ -31,7 +31,7 @@ const Category = () => {
           </div>
         </div>
         {/* category 2  */}
-        <div className="relative group cursor-pointer">
+        <div data-aos="zoom-in" className="relative group cursor-pointer">
           <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
             <img
               src={category2}
@@ -46,7 +46,7 @@ const Category = () => {
           </div>
         </div>
         {/* category 3  */}
-        <div className="relative group cursor-pointer">
+        <div data-aos="zoom-in" className="relative group cursor-pointer">
           <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
             <img
               src={category3}
@@ -61,7 +61,7 @@ const Category = () => {
           </div>
         </div>
         {/* category 4 */}
-        <div className="relative group cursor-pointer">
+        <div data-aos="zoom-in" className="relative group cursor-pointer">
           <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
             <img
               src={category4}
@@ -76,7 +76,7 @@ const Category = () => {
           </div>
         </div>
         {/* category 5 */}
-        <div className="relative group cursor-pointer">
+        <div data-aos="zoom-in-left" className="relative group cursor-pointer">
           <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
             <img
               src={category5}
@@ -93,7 +93,10 @@ const Category = () => {
       </div>
       <div className="grid grid-cols-3 mt-24 gap-6 ">
         {/* other category 1 */}
-        <div className="row-span-2 relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8  hover:ring-opacity-5">
+        <div
+          data-aos="fade-right"
+          className="row-span-2 relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8  hover:ring-opacity-5"
+        >
           <img
             src={cat1}
             alt=""
@@ -112,7 +115,10 @@ const Category = () => {
           </div>
         </div>
         {/* other category 2  */}
-        <div className="relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8 hover:ring-opacity-5">
+        <div
+          data-aos="fade-down"
+          className="relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8 hover:ring-opacity-5"
+        >
           <img
             src={cat2}
             alt=""
@@ -131,7 +137,10 @@ const Category = () => {
           </div>
         </div>
         {/* other category 3  */}
-        <div className="row-span-2 relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8 hover:ring-opacity-5">
+        <div
+          data-aos="zoom-in"
+          className="row-span-2 relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8 hover:ring-opacity-5"
+        >
           <img
             src={cat4}
             alt=""
@@ -150,7 +159,10 @@ const Category = () => {
           </div>
         </div>
         {/* other category 4  */}
-        <div className="relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8 hover:ring-opacity-5">
+        <div
+          data-aos="zoom-up"
+          className="relative group w-full rounded-lg duration-500 overflow-hidden hover:ring-8 hover:ring-opacity-5"
+        >
           <img
             src={cat3}
             alt=""

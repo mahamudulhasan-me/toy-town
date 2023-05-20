@@ -12,7 +12,7 @@ import logo from "../../../assets/images/Logo.png";
 import AdminOption from "../AdminOption/AdminOption";
 const AdminNav = () => {
   return (
-    <div className="bg-white col-span-3 rounded-t-lg">
+    <div data-aos="fade-right" className="bg-white col-span-3 rounded-t-lg">
       <div className=" shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]">
         <img src={logo} alt="" className=" pl-5 " />
       </div>

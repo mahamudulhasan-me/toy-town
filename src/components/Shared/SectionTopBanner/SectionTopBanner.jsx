@@ -4,7 +4,7 @@ import banner from "../../../assets/images/banner/smallbanner1.jpg";
 
 const SectionTopBanner = ({ sectionName, sectionTitle }) => {
   return (
-    <div className="relative">
+    <div data-aos="zoom-in" className="relative">
       <img src={banner} alt="" />
       <div className="absolute top-0 bottom-0 left-[30%] right-0  flex justify-center items-center">
         <div className="">

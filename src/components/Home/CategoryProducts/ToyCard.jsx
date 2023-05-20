@@ -10,7 +10,10 @@ const ToyCard = ({ toyDetails }) => {
   const { _id, name, image1, image2, price, rating } = toyDetails;
 
   return (
-    <div className="rounded-lg group transition-shadow duration-150 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] flex flex-col justify-between ">
+    <div
+      data-aos="zoom-in"
+      className="rounded-lg group transition-shadow duration-150 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] flex flex-col justify-between "
+    >
       <div className="h-3/4  relative overflow-hidden">
         <img
           src={image1}

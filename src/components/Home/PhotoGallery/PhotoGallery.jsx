@@ -24,7 +24,10 @@ const PhotoGallery = () => {
       <PhotoProvider>
         <div className="grid grid-cols-12 place-items-stretch">
           <PhotoView src={gp3}>
-            <div className="col-span-2 row-span-2 relative group">
+            <div
+              data-aos="zoom-in-right"
+              className="col-span-2 row-span-2 relative group"
+            >
               <img alt="img1" src={gp3} className="h-full" />
               <div className="gallery-overly">
                 <FcSearch className="text-5xl cursor-pointer" />
@@ -32,7 +35,7 @@ const PhotoGallery = () => {
             </div>
           </PhotoView>
           <PhotoView src={gp4}>
-            <div className="col-span-3  relative group">
+            <div data-aos="zoom-in" className="col-span-3  relative group">
               <img alt="img1" src={gp4} className="h-full" />
               <div className="gallery-overly">
                 <FcSearch className="text-5xl cursor-pointer" />
@@ -40,7 +43,7 @@ const PhotoGallery = () => {
             </div>
           </PhotoView>
           <PhotoView src={gp1}>
-            <div className="col-span-2  relative group">
+            <div data-aos="zoom-in" className="col-span-2  relative group">
               <img alt="img1" src={gp1} className="h-full" />
               <div className="gallery-overly">
                 <FcSearch className="text-5xl cursor-pointer" />
@@ -48,7 +51,7 @@ const PhotoGallery = () => {
             </div>
           </PhotoView>
           <PhotoView src={gp2}>
-            <div className="col-span-2  relative group">
+            <div data-aos="zoom-in" className="col-span-2  relative group">
               <img alt="img1" src={gp2} className="h-full" />
               <div className="gallery-overly">
                 <FcSearch className="text-5xl cursor-pointer" />
@@ -56,7 +59,7 @@ const PhotoGallery = () => {
             </div>
           </PhotoView>
           <PhotoView src={gp5}>
-            <div className="col-span-3  relative group">
+            <div data-aos="zoom-in" className="col-span-3  relative group">
               <img alt="img1" src={gp5} className="h-full" />
               <div className="gallery-overly">
                 <FcSearch className="text-5xl cursor-pointer" />
@@ -64,7 +67,10 @@ const PhotoGallery = () => {
             </div>
           </PhotoView>
           <PhotoView src={gp14}>
-            <div className="col-span-3  relative group">
+            <div
+              data-aos="zoom-in-right"
+              className="col-span-3  relative group"
+            >
               <img alt="img1" src={gp14} className="h-full" />
               <div className="gallery-overly">
                 <FcSearch className="text-5xl cursor-pointer" />
@@ -72,14 +78,14 @@ const PhotoGallery = () => {
             </div>
           </PhotoView>
           <PhotoView src={gp10}>
-            <div className="col-span-4  relative group">
+            <div data-aos="zoom-in" className="col-span-4  relative group">
               <img alt="img1" src={gp10} className="h-full" />
               <div className="gallery-overly">
                 <FcSearch className="text-5xl cursor-pointer" />
               </div>
             </div>
           </PhotoView>
-          <div className="col-span-3">
+          <div data-aos="zoom-in" className="col-span-3">
             <PhotoView src={gp13}>
               <div className="relative group">
                 <img alt="img1" src={gp13} className="h-full" />
@@ -98,7 +104,10 @@ const PhotoGallery = () => {
             </PhotoView>
           </div>
           <PhotoView src={gp6}>
-            <div className="col-span-3  relative group">
+            <div
+              data-aos="zoom-in-right"
+              className="col-span-3  relative group"
+            >
               <img alt="img1" src={gp6} className="h-full" />
               <div className="gallery-overly">
                 <FcSearch className="text-5xl cursor-pointer" />
@@ -106,7 +115,7 @@ const PhotoGallery = () => {
             </div>
           </PhotoView>
           <PhotoView src={gp7}>
-            <div className="col-span-4  relative group">
+            <div data-aos="zoom-in-up" className="col-span-4  relative group">
               <img alt="img1" src={gp7} className="h-full" />
               <div className="gallery-overly">
                 <FcSearch className="text-5xl cursor-pointer" />
@@ -115,7 +124,7 @@ const PhotoGallery = () => {
           </PhotoView>
 
           <PhotoView src={gp8}>
-            <div className="col-span-1  relative group">
+            <div data-aos="zoom-in-up" className="col-span-1  relative group">
               <img alt="img1" src={gp8} className="h-full" />
               <div className="gallery-overly">
                 <FcSearch className="text-5xl cursor-pointer" />
@@ -123,7 +132,7 @@ const PhotoGallery = () => {
             </div>
           </PhotoView>
           <PhotoView src={gp11}>
-            <div className="col-span-4  relative group">
+            <div data-aos="zoom-in-up" className="col-span-4  relative group">
               <img alt="img1" src={gp11} className="h-full" />
               <div className="gallery-overly">
                 <FcSearch className="text-5xl cursor-pointer" />

@@ -6,10 +6,14 @@ import payment from "../../../assets/images/sslcommerz-banner.png";
 const Footer = () => {
   return (
     <div
+      data-aos="zoom-in-up"
       className="bg-cover px-[5%] pt-10 pb-5"
       style={{ backgroundImage: `url(${footerBg})` }}
     >
-      <div className="text-[1rem] footer pb-5 mb-2 text-gray-600  grid grid-cols-4 gap-10 border-b border-slate-400">
+      <div
+        data-aos="zoom-in-up"
+        className="text-[1rem] footer pb-5 mb-2 text-gray-600  grid grid-cols-4 gap-10 border-b border-slate-400"
+      >
         <div>
           <img src={logo} alt="" />
           <p className="mt-6 leading-6">

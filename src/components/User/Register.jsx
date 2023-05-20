@@ -59,7 +59,10 @@ const Register = ({ signIn, setSignIn, path }) => {
     }
   };
   return (
-    <div className="text-center  mb-10 mt-20 bg-white rounded-3xl">
+    <div
+      data-aos="fade-left"
+      className="text-center  mb-10 mt-20 bg-white rounded-3xl"
+    >
       <h2 className="mt-8 mb-10 text-3xl text-pri">
         Sign <span className="text-sec">Up</span>
       </h2>

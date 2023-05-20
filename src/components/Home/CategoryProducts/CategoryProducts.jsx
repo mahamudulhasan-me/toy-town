@@ -17,7 +17,7 @@ const CategoryProducts = () => {
     <div className="pl-[5%]">
       <SectionHeader section="showcase" title="Shop By Category" />
       <div className="grid grid-cols-12 gap-5 justify-between ">
-        <div className="col-span-3">
+        <div data-aos="fade-right" className="col-span-3">
           <div className="relative group w-full rounded-lg duration-500 overflow-hidden">
             <img
               src={hrbanner}

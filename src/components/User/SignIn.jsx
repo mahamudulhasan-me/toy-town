@@ -40,10 +40,13 @@ const SignIn = () => {
   return (
     <div className="min-h-[calc(100vh-4rem)] grid grid-cols-2 justify-center items-center px-[10%]  bg-gray-100">
       <div>
-        <img src={login} alt="" />
+        <img data-aos="fade-right" src={login} alt="" />
       </div>
       {isSignIn ? (
-        <div className="text-center  mb-10 mt-20 bg-white rounded-3xl w-4/5">
+        <div
+          data-aos="fade-left"
+          className="text-center  mb-10 mt-20 bg-white rounded-3xl w-4/5"
+        >
           <h2 className="mt-8 mb-10 text-3xl text-pri">
             Sign <span className="text-sec">In</span>
           </h2>

@@ -40,7 +40,10 @@ const AddToy = () => {
         <div className="grid grid-cols-12 justify-between  items-start ">
           <AdminNav />
           <div className="col-span-8 shadow-inner">
-            <div className="w-full bg-white px-5 py-[5px] rounded-t-lg">
+            <div
+              data-aos="fade-left"
+              className="w-full bg-white px-5 py-[5px] rounded-t-lg"
+            >
               <h2>Insert Item</h2>
               <div className="text-sm breadcrumbs">
                 <ul>
@@ -56,7 +59,7 @@ const AddToy = () => {
                 </ul>
               </div>
             </div>
-            <div className="p-8">
+            <div data-aos="fade-left" className="p-8">
               <div className="bg-white p-5 rounded-md">
                 <h2 className="border-b text-xl pb-4">Added Latest Toy</h2>
                 <p>

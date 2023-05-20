@@ -11,7 +11,10 @@ const AllToysSingleCard = ({ toyDetails }) => {
   const { _id, name, image1, image2, price, rating, sellerName, sellerEmail } =
     toyDetails;
   return (
-    <div className="rounded-lg mb-10 group transition-shadow duration-150 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+    <div
+      data-aos="fade-down"
+      className="rounded-lg mb-10 group transition-shadow duration-150 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+    >
       <div className="h-[65%]  relative overflow-hidden">
         <img
           src={image1}
