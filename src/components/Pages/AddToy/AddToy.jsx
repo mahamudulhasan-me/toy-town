@@ -14,7 +14,7 @@ const AddToy = () => {
 
   const onSubmit = (toyDetails) => {
     toyDetails.sellerUid = user?.uid;
-    fetch(`http://localhost:4040/toys`, {
+    fetch(`https://toy-town-server-mahamudulhasan-me.vercel.app/toys`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

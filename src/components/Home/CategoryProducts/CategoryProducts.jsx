@@ -9,7 +9,9 @@ const CategoryProducts = () => {
   const [toys, setToys] = useState([]);
   const [category, setCategory] = useState("Classic");
   useEffect(() => {
-    fetch(`http://localhost:4040/categories/${category}`)
+    fetch(
+      `https://toy-town-server-mahamudulhasan-me.vercel.app/categories/${category}`
+    )
       .then((response) => response.json())
       .then((data) => setToys(data));
   }, [category]);

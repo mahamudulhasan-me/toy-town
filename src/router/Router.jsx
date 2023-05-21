@@ -41,7 +41,9 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4040/toy-details/${params?.id}`),
+          fetch(
+            `https://toy-town-server-mahamudulhasan-me.vercel.app/toy-details/${params?.id}`
+          ),
       },
       {
         path: "allToys",
@@ -55,12 +57,15 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4040/my-toys/${params?.uid}`),
+          fetch(
+            `https://toy-town-server-mahamudulhasan-me.vercel.app/my-toys/${params?.uid}`
+          ),
       },
       {
         path: "/blogs",
         element: <LatestBlogs />,
-        loader: () => fetch(`http://localhost:4040/blogs`),
+        loader: () =>
+          fetch(`https://toy-town-server-mahamudulhasan-me.vercel.app/blogs`),
       },
     ],
   },

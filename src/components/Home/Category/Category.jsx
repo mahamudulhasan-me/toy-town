@@ -151,7 +151,7 @@ const Category = () => {
               Big Discount
             </span>
             <h2 className="text-sec  font-nunito text-3xl mt-7 duration-500 group-hover:mt-5 ">
-              Kid's Toys & Games
+              Kid&apos;s Toys & Games
             </h2>
             <button className="underline hover:text-sec hover:tracking-widest duration-150">
               Shop Now

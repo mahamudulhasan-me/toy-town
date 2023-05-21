@@ -9,18 +9,23 @@ const UpdateForm = ({ toyId }) => {
   const [toyInfo, setToyInfo] = useState();
   useTitle("Update Toy");
   useEffect(() => {
-    fetch(`http://localhost:4040/toy-details/${toyId}`)
+    fetch(
+      `https://toy-town-server-mahamudulhasan-me.vercel.app/toy-details/${toyId}`
+    )
       .then((response) => response.json())
       .then((data) => setToyInfo(data));
   }, [toyId]);
   const onSubmit = (updatedInfo) => {
-    fetch(`http://localhost:4040/update-toy-details/${toyId}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedInfo),
-    })
+    fetch(
+      `https://toy-town-server-mahamudulhasan-me.vercel.app/update-toy-details/${toyId}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedInfo),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
