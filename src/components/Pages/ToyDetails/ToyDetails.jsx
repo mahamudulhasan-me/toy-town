@@ -34,11 +34,11 @@ const ToyDetails = () => {
         sectionName="toy-details"
       />
       <div className="w-4/5 mx-auto my-10 text-gray-700">
-        <div className="grid grid-cols-12">
-          <div className="col-span-4 ">
+        <div className="md:grid md:grid-cols-12">
+          <div className="md:col-span-4 mb-6 md:mb-0">
             <img src={image1} alt="" className=" rounded-xl border-2" />
           </div>
-          <div className="col-span-8">
+          <div className="md:col-span-8">
             <h2 className=" text-2xl font-nunito">{name}</h2>
             <p className="flex  text-gray-600 mb-4">
               <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
@@ -60,7 +60,7 @@ const ToyDetails = () => {
               Available Quantity:
               <span className="font-semibold"> {quantity}</span>
             </p>
-            <p className="w-4/5 text-justify mt-2">{description}</p>
+            <p className="md:w-4/5 text-justify mt-2">{description}</p>
             <div className="mt-5">
               <p className="font-semibold ">Seller Info:</p>
               <div className="border-l-8 border-pri rounded-l pl-1 ">
@@ -78,7 +78,7 @@ const ToyDetails = () => {
               </div>
             </div>
 
-            <button className="bg-pri group flex items-center justify-center gap-4 hover:bg-sec duration-200 mt-5 w-2/6 py-2 rounded-md text-white">
+            <button className="bg-pri group flex items-center justify-center gap-4 hover:bg-sec duration-200 mt-5 md:w-2/6 w-full py-2 rounded-md text-white">
               Add to Cart
               <FaCartPlus className="text-sec text-2xl group-hover:text-pri" />
             </button>
