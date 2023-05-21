@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Rating } from "@smastrom/react-rating";
 import React, { useEffect, useState } from "react";
 import {
@@ -23,12 +24,9 @@ const MyToys = () => {
   const { uid } = useParams();
   useTitle("My Toys");
   useEffect(() => {
-    fetch(
-      `https://toy-town-server-mahamudulhasan-me.vercel.app/my-toys/${uid}?sortBy=${sortBy}`
-    )
+    fetch(`http://localhost:4040/my-toys/${uid}?sortBy=${sortBy}`)
       .then((response) => response.json())
       .then((data) => setMyToys(data));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortBy]);
 
   const handleDelete = (id) => {
@@ -42,12 +40,9 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `https://toy-town-server-mahamudulhasan-me.vercel.app/delete-toy/${id}`,
-          {
-            method: "DELETE",
-          }
-        )
+        fetch(`http://localhost:4040/delete-toy/${id}`, {
+          method: "DELETE",
+        })
           .then((response) => response.json())
           .then((data) => {
             if (data.deletedCount > 0) {

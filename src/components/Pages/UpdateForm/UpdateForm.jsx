@@ -28,7 +28,6 @@ const UpdateForm = ({ toyId }) => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire(
             "Updated Successfully!",
@@ -37,7 +36,6 @@ const UpdateForm = ({ toyId }) => {
           );
         }
       });
-    console.log(updatedInfo);
   };
   return (
     <>

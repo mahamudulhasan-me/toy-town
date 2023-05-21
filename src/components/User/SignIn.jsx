@@ -18,7 +18,7 @@ const SignIn = () => {
   useTitle("Sign In");
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+
   const path = location.state || "/";
   // login with email and password
   const handleEmailPasswordSignIn = (e) => {

@@ -31,7 +31,7 @@ const AddToy = () => {
           );
         }
       });
-    console.log(toyDetails);
+
   };
   return (
     <div>

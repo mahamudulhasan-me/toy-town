@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import logo from "../../../assets/images/Logo.png";
 import { AuthContext } from "../../../provider/AuthProvider";
 import ActiveLink from "../ActiveLink/ActiveLink";
+
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   // handle logout
@@ -97,9 +98,9 @@ const Header = () => {
               </Link>
             </div>
           ) : (
-            <AwesomeButton type="secondary">
-              <Link to={"/signin"}>Sign In</Link>
-            </AwesomeButton>
+            <Link to={"/signin"}>
+              <AwesomeButton type="secondary">Sign In</AwesomeButton>
+            </Link>
           )}
         </div>
       </div>
