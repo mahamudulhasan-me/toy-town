@@ -20,7 +20,7 @@ import sponsor5 from "../../../assets/images/sponsor/sponsor5.png";
 import sponsor6 from "../../../assets/images/sponsor/sponsor6.png";
 export default function Sponsor() {
   return (
-    <div data-aos="zoom-in" className="px-[8%] my-14">
+    <div data-aos="zoom-in" className="md:px-[8%] md:p-0 p-10 md:my-14">
       <Swiper
         slidesPerView={1}
         spaceBetween={8}

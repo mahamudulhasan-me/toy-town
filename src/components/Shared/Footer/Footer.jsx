@@ -12,9 +12,9 @@ const Footer = () => {
     >
       <div
         data-aos="zoom-in-up"
-        className="text-[1rem] footer pb-5 mb-2 text-gray-600  grid grid-cols-4 gap-10 border-b border-slate-400"
+        className="text-[1rem] footer pb-5 mb-2 text-gray-600  md:grid md:grid-cols-4 grid-cols-2 gap-10 border-b border-slate-400"
       >
-        <div>
+        <div className="col-span-2 md:col-span-1">
           <img src={logo} alt="" />
           <p className="mt-6 leading-6">
             This is Photoshops version of Lorem fenIpsum. Proin gravida nibh
@@ -43,7 +43,7 @@ const Footer = () => {
             <li>Contact Us</li>
           </ul>
         </div>
-        <div>
+        <div className="col-span-2 md:col-span-1">
           <h2 className="text-2xl  text-sec mt-5 mb-3 font-nunito">
             Store Information
           </h2>

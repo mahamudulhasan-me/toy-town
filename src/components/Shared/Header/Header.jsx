@@ -63,7 +63,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52 bg-pri space-y-3 bg-opacity-80"
             >
               {navOption}
             </ul>

@@ -16,11 +16,7 @@ const AllToysSingleCard = ({ toyDetails }) => {
       className="rounded-lg mb-10 group transition-shadow duration-150 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
     >
       <div className="h-[65%]  relative overflow-hidden">
-        <img
-          src={image1}
-          className="group-hover:hidden rounded-t-lg transition-all "
-          alt=""
-        />
+        <img src={image1} className=" rounded-t-lg transition-all " alt="" />
         <div className=" transition-all group-hover:duration-500  absolute group-hover:left-0 group-hover:right-0 left-1/2 right-1/2 group-hover:bottom-0 group-hover:top-0 bottom-1/2 top-1/2 ">
           <img src={image2} alt="" className="w-full rounded-lg" />
         </div>

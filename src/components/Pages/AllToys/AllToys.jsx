@@ -33,7 +33,8 @@ const AllToys = () => {
       <div className="px-[5%] mb-10">
         <SectionHeader section="all toys" title="Search & Get Your Toy" />
 
-        <div className="w-[30%] mx-auto -mt-5 relative mb-5">
+        {/* search field  */}
+        <div className="md:w-[30%] w-4/5 mx-auto -mt-5 relative mb-5">
           <input
             onChange={handleSearch}
             type="text"
@@ -50,7 +51,7 @@ const AllToys = () => {
             <BeatLoader color="#36d7b7" />
           </div>
         ) : (
-          <div className="grid grid-cols-4 gap-5 min-h-min">
+          <div className="md:grid grid-cols-4 gap-5 min-h-min">
             {toys.length === 0 ? (
               <div className="col-span-4  text-center mt-10 font-semibold h-56 text-gray-500 tracking-widest">
                 No Match

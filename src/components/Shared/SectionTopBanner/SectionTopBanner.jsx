@@ -6,9 +6,11 @@ const SectionTopBanner = ({ sectionName, sectionTitle }) => {
   return (
     <div data-aos="zoom-in" className="relative">
       <img src={banner} alt="" />
-      <div className="absolute top-0 bottom-0 left-[30%] right-0  flex justify-center items-center">
+      <div className="absolute top-0 bottom-0 left-1/2 md:left-[30%] right-0  flex justify-center items-center">
         <div className="">
-          <h2 className="text-sec font-nunito text-4xl">{sectionTitle}</h2>
+          <h2 className="text-sec font-nunito text-xl md:text-4xl">
+            {sectionTitle}
+          </h2>
           <div className="text-sm breadcrumbs">
             <ul>
               <li>

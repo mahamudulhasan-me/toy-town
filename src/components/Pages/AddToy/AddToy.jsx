@@ -36,12 +36,18 @@ const AddToy = () => {
   return (
     <div>
       <SectionTopBanner sectionName="Add Toy" sectionTitle="Add Latest Toy" />
-      <div className="bg-[#E9EDF4] min-h-screen px-[10%] shadow-2xl pt-10">
-        <div className="grid grid-cols-12 justify-between  items-start ">
-          <AdminNav />
+      <div className="bg-[#E9EDF4] min-h-screen md:px-[10%] shadow-2xl pt-10">
+        <div className="md:grid grid-cols-12 justify-between  items-start ">
+          <div
+            data-aos="fade-right"
+            className="hidden md:col-span-3 md:block bg-white  rounded-t-lg"
+          >
+            <AdminNav />
+          </div>
+
           <div className="col-span-8 shadow-inner">
             <div
-              data-aos="fade-left"
+              // data-aos="fade-left"
               className="w-full bg-white px-5 py-[5px] rounded-t-lg"
             >
               <h2>Insert Item</h2>
@@ -59,7 +65,10 @@ const AddToy = () => {
                 </ul>
               </div>
             </div>
-            <div data-aos="fade-left" className="p-8">
+            <div
+              // data-aos="fade-left"
+              className="p-8"
+            >
               <div className="bg-white p-5 rounded-md">
                 <h2 className="border-b text-xl pb-4">Added Latest Toy</h2>
                 <p>
@@ -67,7 +76,7 @@ const AddToy = () => {
                   vulputate, ex ac venenatis mollis, diam nibh finibus leo
                 </p>
                 <form onSubmit={handleSubmit(onSubmit)} className="mt-5">
-                  <div className="grid grid-cols-2 gap-3 mb-5">
+                  <div className="md:grid grid-cols-2 gap-3 mb-5">
                     <div>
                       <label className="text-sm">Toy Name</label> <br />
                       <input
@@ -147,7 +156,7 @@ const AddToy = () => {
                       <label className="text-sm">Description</label> <br />
                       <textarea
                         {...register("description")}
-                        className="bg-[#E9EDF4] w-full h-[90%]   px-2 rounded-md outline-none focus:border border-pri "
+                        className="bg-[#E9EDF4] w-full md:h-[90%] h-28  px-2 rounded-md outline-none focus:border border-pri "
                       ></textarea>
                     </div>
 

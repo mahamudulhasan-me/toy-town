@@ -16,13 +16,13 @@ const CategoryProducts = () => {
   return (
     <div className="pl-[5%]">
       <SectionHeader section="showcase" title="Shop By Category" />
-      <div className="grid grid-cols-12 gap-5 justify-between ">
-        <div data-aos="fade-right" className="col-span-3">
+      <div className="md:grid flex flex-col-reverse md:grid-cols-12 gap-5 justify-between ">
+        <div data-aos="fade-right" className="md:col-span-3">
           <div className="relative group w-full rounded-lg duration-500 overflow-hidden">
             <img
               src={hrbanner}
               alt=""
-              className="rounded-lg transition-all duration-700"
+              className="rounded-lg w-full transition-all duration-700"
             />
             <div className="absolute  group-hover:top-0 group-hover:bottom-0 duration-1000  top-1/2 left-0  right-0 bottom-1/2  bg-slate-950 bg-opacity-25 z-10 "></div>
             <div className="absolute  top-0 left-0 z-20 right-0 bottom-0  text-center pt-10 ">
@@ -41,7 +41,7 @@ const CategoryProducts = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-9">
+        <div className="col-span-9 ">
           <Tabs>
             <TabList>
               <Tab onClick={() => setCategory("Classic")}>
@@ -75,21 +75,21 @@ const CategoryProducts = () => {
             </TabList>
 
             <TabPanel>
-              <div className="grid grid-cols-3 gap-5">
+              <div className="md:grid grid-cols-3 gap-5">
                 {toys.map((toy) => (
                   <ToyCard key={toy._id} toyDetails={toy} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="grid grid-cols-3 gap-5">
+              <div className="md:grid grid-cols-3 gap-5">
                 {toys.map((toy) => (
                   <ToyCard key={toy._id} toyDetails={toy} />
                 ))}
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="grid grid-cols-3 gap-5">
+              <div className="md:grid grid-cols-3 gap-5">
                 {toys.map((toy) => (
                   <ToyCard key={toy._id} toyDetails={toy} />
                 ))}

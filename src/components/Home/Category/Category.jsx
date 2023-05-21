@@ -11,20 +11,20 @@ import category3 from "../../../assets/images/products/ph.jpg";
 import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
 const Category = () => {
   return (
-    <div className="px-[5%]  my-24">
+    <div className="px-[10%] md:px-[5%]   my-24">
       <SectionHeader section="Category" title="Choose Favorite Category" />
 
-      <div className="grid grid-cols-5 gap-10">
+      <div className="grid  space-y-5 lg:space-y-0 lg:grid-cols-5 md:grid-cols-2 gap-10">
         {/* category 1  */}
         <div data-aos="zoom-in-right" className="relative group cursor-pointer">
-          <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
+          <div className="mb-6 md:mb-0 p-2 ring-1 ring-gray-300 rounded-full md:w-3/4 w-[60%] mx-auto bg-white ">
             <img
               src={category1}
               alt=""
-              className="rounded-full group-hover:scale-110 duration-300 transition-all ease-in-out"
+              className="rounded-full group-hover:scale-105 duration-300 transition-all ease-in-out"
             />
           </div>
-          <div className="ring-1 flex justify-center items-end  ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-slate-100 absolute top-20">
+          <div className="ring-1  flex justify-center items-end  ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-slate-100 absolute top-20">
             <h4 className="mb-2 text-xl font-nunito text-slate-900 group-hover:text-pri">
               Classic
             </h4>
@@ -32,11 +32,11 @@ const Category = () => {
         </div>
         {/* category 2  */}
         <div data-aos="zoom-in" className="relative group cursor-pointer">
-          <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
+          <div className="mb-6 md:mb-0 p-2 ring-1 ring-gray-300 rounded-full md:w-3/4 w-[60%] mx-auto bg-white ">
             <img
               src={category2}
               alt=""
-              className="rounded-full group-hover:scale-110 duration-300 transition-all ease-in-out"
+              className="rounded-full group-hover:scale-105 duration-300 transition-all ease-in-out"
             />
           </div>
           <div className="ring-1 flex justify-center items-end  ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-slate-100 absolute top-20">
@@ -47,11 +47,11 @@ const Category = () => {
         </div>
         {/* category 3  */}
         <div data-aos="zoom-in" className="relative group cursor-pointer">
-          <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
+          <div className="mb-6 md:mb-0 p-2 ring-1 ring-gray-300 rounded-full md:w-3/4 w-[60%] mx-auto bg-white ">
             <img
               src={category3}
               alt=""
-              className="rounded-full group-hover:scale-110 duration-300 transition-all ease-in-out"
+              className="rounded-full group-hover:scale-105 duration-300 transition-all ease-in-out"
             />
           </div>
           <div className="ring-1 flex justify-center items-end  ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-slate-100 absolute top-20">
@@ -62,11 +62,11 @@ const Category = () => {
         </div>
         {/* category 4 */}
         <div data-aos="zoom-in" className="relative group cursor-pointer">
-          <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
+          <div className="mb-6 md:mb-0 p-2 ring-1 ring-gray-300 rounded-full md:w-3/4 w-[60%] mx-auto bg-white ">
             <img
               src={category4}
               alt=""
-              className="rounded-full group-hover:scale-110 duration-300 transition-all ease-in-out"
+              className="rounded-full group-hover:scale-105 duration-300 transition-all ease-in-out"
             />
           </div>
           <div className="ring-1 flex justify-center items-end  ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-slate-100 absolute top-20">
@@ -77,11 +77,11 @@ const Category = () => {
         </div>
         {/* category 5 */}
         <div data-aos="zoom-in-left" className="relative group cursor-pointer">
-          <div className="p-2 ring-1 ring-gray-300 rounded-full w-3/4 mx-auto bg-white ">
+          <div className="mb-6 md:mb-0 p-2 ring-1 ring-gray-300 rounded-full md:w-3/4 w-[60%] mx-auto bg-white ">
             <img
               src={category5}
               alt=""
-              className="rounded-full group-hover:scale-110 duration-300 transition-all ease-in-out"
+              className="rounded-full group-hover:scale-105 duration-300 transition-all ease-in-out"
             />
           </div>
           <div className="ring-1 flex justify-center items-end  ring-gray-300 w-full h-4/5 -z-10 rounded-t-[80%] bg-slate-100 absolute top-20">
@@ -91,7 +91,7 @@ const Category = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 mt-24 gap-6 ">
+      <div className="grid md:grid-cols-3 mt-24 gap-6 ">
         {/* other category 1 */}
         <div
           data-aos="fade-right"
