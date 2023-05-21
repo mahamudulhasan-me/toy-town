@@ -43,7 +43,7 @@ const Header = () => {
   );
   return (
     <Headroom>
-      <div className="px-[10%] navbar bg-pri text-white font-poppins font-semibold z-50">
+      <div className="myHeader px-[10%] navbar bg-pri text-white font-poppins font-semibold z-50">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
