@@ -16,7 +16,7 @@ const CategoryProducts = () => {
       .then((data) => setToys(data));
   }, [category]);
   return (
-    <div className="pl-[5%]">
+    <div className="px-[5%]">
       <SectionHeader section="showcase" title="Shop By Category" />
       <div className="md:grid flex flex-col-reverse md:grid-cols-12 gap-5 justify-between ">
         <div data-aos="fade-right" className="md:col-span-3">
@@ -77,7 +77,7 @@ const CategoryProducts = () => {
             </TabList>
 
             <TabPanel>
-              <div className="md:grid grid-cols-3 gap-5">
+              <div className="md:grid grid-cols-3 space-y-5 md:gap-5">
                 {toys.map((toy) => (
                   <ToyCard key={toy._id} toyDetails={toy} />
                 ))}

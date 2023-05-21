@@ -25,7 +25,7 @@ export default function Banner() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 100000,
+          delay: 60000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -44,7 +44,7 @@ export default function Banner() {
                 <h3 className="text-sec text-3xl font-normal mb-5  font-poppins">
                   Hot & Trendy
                 </h3>
-                <h1 className="text-6xl text-white font-nunito font-bold">
+                <h1 className="md:text-6xl text-4xl text-white font-nunito font-bold">
                   New Arrival Electric <br /> Remote Car
                 </h1>
                 <p className="capitalize mt-6 mb-4 text-gray-200 font-nunito">
@@ -62,14 +62,14 @@ export default function Banner() {
           <div className="relative h-[calc(100vh-4rem)] w-full">
             <img src={slider3} alt="" />
             <div className="absolute z-10  flex justify-center flex-col items-end   left-0 right-0 bottom-0 top-0 bg-opacity-50">
-              <div className="mr-20">
+              <div className="md:mr-20 mr-5">
                 <h3 className="text-sec text-3xl font-normal mb-5  font-poppins">
                   Hot & Trendy
                 </h3>
-                <h1 className="text-6xl text-black font-nunito font-bold">
+                <h1 className="md:text-6xl text-4xl text-black font-nunito font-bold">
                   Driven by Battat <br /> Micro Police SUV
                 </h1>
-                <p className="capitalize mt-6 mb-4 text-gray-600 font-semibold">
+                <p className="capitalize mt-6 mb-4  text-pri md:text-gray-600 font-semibold">
                   Get Up to 30% of your on your first order
                 </p>
                 <AwesomeButton type="primary">Shop Now</AwesomeButton>
@@ -83,15 +83,15 @@ export default function Banner() {
           <div className="relative h-[calc(100vh-4rem)] w-full">
             <img src={slider1} alt="" />
             <div className="absolute  flex justify-center flex-col items-end   left-0 right-0 bottom-0 top-0 bg-opacity-50">
-              <div className="mr-20">
-                <h3 className="text-sec text-3xl font-normal mb-5  font-poppins">
+              <div className=" mr-5 md:mr-20">
+                <h3 className="text-sec text-3xl font-normal mb-5  font-poppins ">
                   Hot & Trendy
                 </h3>
-                <h1 className="text-5xl text-white font-nunito font-bold">
+                <h1 className=" md:text-5xl text-4xl md:text-white text-slate-950 font-nunito font-bold">
                   Sunny Days Entertain
                   <br /> Large Police Car
                 </h1>
-                <p className="capitalize mt-6 mb-4 text-gray-300 font-semibold">
+                <p className="capitalize mt-6 mb-4 md:text-left text-center md:text-gray-300 text-pri font-semibold">
                   Get Up to 30% of your on your first order
                 </p>
                 <AwesomeButton type="primary">Shop Now</AwesomeButton>
