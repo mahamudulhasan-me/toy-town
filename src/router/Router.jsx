@@ -2,7 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../components/Home/Home";
 import AddToy from "../components/Pages/AddToy/AddToy";
 import AllToys from "../components/Pages/AllToys/AllToys";
+
+import LatestBlogs from "../components/Pages/Blogs/LatestBlogs";
 import MyToys from "../components/Pages/MyToys/MyToys";
+import NotFound from "../components/Pages/NotFound/NotFound";
 import ToyDetails from "../components/Pages/ToyDetails/ToyDetails";
 import SignIn from "../components/User/SignIn";
 import Main from "../layout/Main";
@@ -12,6 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
@@ -52,6 +56,11 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:4040/my-toys/${params?.uid}`),
+      },
+      {
+        path: "/blogs",
+        element: <LatestBlogs />,
+        loader: () => fetch(`http://localhost:4040/blogs`),
       },
     ],
   },
