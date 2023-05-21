@@ -67,26 +67,26 @@ const Register = ({ signIn, setSignIn, path }) => {
         Sign <span className="text-sec">Up</span>
       </h2>
       <form onSubmit={handleRegisterNewUser} className="space-y-5 ">
-        <div className="grid grid-cols-2 gap-5 px-5">
+        <div className="md:grid grid-cols-2 gap-5 px-5 md:space-y-0 space-y-4">
           <input
             required
             type="text"
             name="name"
             placeholder="Full Name"
-            className="bg-[#F8F8F8]  py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
+            className="bg-[#F8F8F8] w-full py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
           />
           <input
             type="url"
             name="photo"
             placeholder="Photo URL"
-            className="bg-[#F8F8F8]  py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
+            className="bg-[#F8F8F8] w-full py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
           />
           <input
             required
             type="text"
             placeholder="Email"
             name="email"
-            className="bg-[#F8F8F8] py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
+            className="bg-[#F8F8F8] py-3 w-full rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
           />
           <div className="relative">
             <input
@@ -95,7 +95,7 @@ const Register = ({ signIn, setSignIn, path }) => {
               name="password"
               onChange={getPassword}
               placeholder="Enter Password"
-              className=" bg-[#F8F8F8]  py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
+              className=" bg-[#F8F8F8] w-full py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
             />
             {showPassword ? (
               <FaEye

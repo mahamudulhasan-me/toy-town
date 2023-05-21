@@ -38,16 +38,16 @@ const SignIn = () => {
     }
   };
   return (
-    <div className="min-h-[calc(100vh-4rem)] grid grid-cols-2 justify-center items-center px-[10%]  bg-gray-100">
+    <div className="min-h-[calc(100vh-4rem)] md:grid grid-cols-2 justify-center items-center px-[10%]  bg-gray-100">
       <div>
         <img data-aos="fade-right" src={login} alt="" />
       </div>
       {isSignIn ? (
         <div
           data-aos="fade-left"
-          className="text-center  mb-10 mt-20 bg-white rounded-3xl w-4/5"
+          className="text-center  mb-10 mt-20 bg-white rounded-3xl md:w-4/5"
         >
-          <h2 className="mt-8 mb-10 text-3xl text-pri">
+          <h2 className="mt-8  mb-10 text-3xl text-pri">
             Sign <span className="text-sec">In</span>
           </h2>
           <form onSubmit={handleEmailPasswordSignIn} className="space-y-5">
@@ -56,7 +56,7 @@ const SignIn = () => {
               type="text"
               name="email"
               placeholder="Enter Email"
-              className="bg-[#F8F8F8] w-4/5 mx-auto py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
+              className="bg-[#F8F8F8] md:w-4/5 w-[90%] mx-auto py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
             />
             <div className="relative">
               <input
@@ -64,7 +64,7 @@ const SignIn = () => {
                 type={`${showPassword ? "text" : "password"}`}
                 name="password"
                 placeholder="Enter Password"
-                className=" bg-[#F8F8F8] w-4/5 mx-auto py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
+                className=" bg-[#F8F8F8] md:w-4/5 w-[90%] mx-auto py-3 rounded-t-md focus:border-sec duration-200 border-b-4 rounded-b-xl outline-none px-4"
               />
               {showPassword ? (
                 <FaEye
