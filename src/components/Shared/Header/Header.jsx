@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import logo from "../../../assets/images/Logo.png";
 import { AuthContext } from "../../../provider/AuthProvider";
+import ActiveLink from "../ActiveLink/ActiveLink";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   // handle logout
@@ -15,27 +16,27 @@ const Header = () => {
   };
   const navOption = (
     <>
-      <Link to={"/"}>
+      <ActiveLink to={"/"}>
         <li>Home</li>{" "}
-      </Link>
+      </ActiveLink>
 
-      <Link to={"/blogs"}>
+      <ActiveLink to={"/blogs"}>
         <li>Blog</li>
-      </Link>
+      </ActiveLink>
 
-      <Link to={"/allToys"}>
+      <ActiveLink to={"/allToys"}>
         <li>All Toys</li>
-      </Link>
+      </ActiveLink>
 
       {user && (
         <>
-          <Link to={`/my-toys/${user?.uid}`}>
+          <ActiveLink to={`/my-toys/${user?.uid}`}>
             <li>My Toys</li>
-          </Link>
+          </ActiveLink>
 
-          <Link to={"/add-a-toy"}>
+          <ActiveLink to={"/add-a-toy"}>
             <li>Add A Toy</li>
-          </Link>
+          </ActiveLink>
         </>
       )}
     </>

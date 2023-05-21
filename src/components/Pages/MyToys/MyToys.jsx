@@ -1,5 +1,5 @@
 import { Rating } from "@smastrom/react-rating";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaEdit,
   FaEnvelope,
@@ -7,7 +7,7 @@ import {
   FaTrashAlt,
   FaUserLock,
 } from "react-icons/fa";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useTitle from "../../../hooks/useTitle";
@@ -19,7 +19,15 @@ const MyToys = () => {
   const myToysInit = useLoaderData();
   const [myToys, setMyToys] = useState(myToysInit);
   const [clickedId, setClickedId] = useState("");
+  const [sortBy, setSortBy] = useState("");
+  const { uid } = useParams();
   useTitle("My Toys");
+  useEffect(() => {
+    fetch(`http://localhost:4040/my-toys/${uid}?sortBy=${sortBy}`)
+      .then((response) => response.json())
+      .then((data) => setMyToys(data));
+  }, [sortBy]);
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -51,16 +59,29 @@ const MyToys = () => {
         <SectionHeader section="my toys" title="Take Care Your All Toys" />
         <div>
           <div className="overflow-x-auto">
-            <table className="table table-zebra w-full text-gray-700">
+            <div
+              onChange={(e) => setSortBy(e.target.value)}
+              className="mb-2 m-1 flex justify-end mr-10 "
+            >
+              <select className="select select-accent h-8  select-xs max-w-xs">
+                <option disabled selected>
+                  Sort By Price
+                </option>
+
+                <option value="ascending">Ascending</option>
+                <option value="descending">Descending</option>
+              </select>
+            </div>
+            <table className=" table table-zebra w-full text-gray-700">
               {/* head */}
               <thead>
-                <tr>
+                <tr className="w-full">
                   <th></th>
                   <th>Name & Seller</th>
                   <th>Category</th>
                   <th>Price</th>
                   <th>Rating</th>
-                  <th>Action</th>
+                  <th className="text-center">Action</th>
                 </tr>
               </thead>
               <tbody>

@@ -16,7 +16,7 @@ const LatestBlogs = () => {
             {blogs.map((blog) => (
               <div
                 data-aos="fade-down"
-                key={blog?.id}
+                key={blog?._id}
                 className="border p-2 mb-5 md:mb-0 rounded-lg"
               >
                 <LazyLoad>
@@ -74,7 +74,7 @@ const LatestBlogs = () => {
             {blogs.reverse().map((blog) => (
               <div
                 data-aos="fade-left"
-                key={blog?.id}
+                key={blog?._id}
                 className="border p-2 rounded-lg"
               >
                 <LazyLoad>
